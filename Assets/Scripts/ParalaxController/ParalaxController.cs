@@ -7,6 +7,7 @@ namespace EarthDefender
         [SerializeField] Transform[] backgrounds; // Array of background layers
         [SerializeField] float smoothing = 10f; // How smooth the parallax effect is
         [SerializeField] float multiplier = 15f; // How much the parallax effect increments per layer
+        [SerializeField] float speed = 4f; 
 
         [SerializeField]
         Transform cam; // Reference to the main camera
@@ -19,7 +20,7 @@ namespace EarthDefender
             // Iterate through each background layer
             for (var i = 0; i < backgrounds.Length; i++)
             {
-                var parallax = (previousCamPos.x - cam.position.x) * (i * multiplier);
+                var parallax = -speed * ((i + 1) * multiplier);
                 var targetX = backgrounds[i].position.x + parallax;
 
                 var targetPosition = new Vector3(targetX, backgrounds[i].position.y, backgrounds[i].position.z);

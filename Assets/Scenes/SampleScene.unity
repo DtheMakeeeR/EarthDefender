@@ -342,7 +342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3176485f4d6e86c4db46dcad809280b7, type: 3}
   m_Name: 
@@ -431,7 +431,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.53396225, g: 1, b: 0.5913476, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1007,8 +1007,9 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 1775751219}
   - {fileID: 1274412791}
-  smoothing: 10
-  multiplier: 15
+  smoothing: 0.05
+  multiplier: 5
+  speed: 2
   cam: {fileID: 519420032}
 --- !u!1 &1387159603
 GameObject:
