@@ -7,10 +7,26 @@ namespace EarthDefender
     {
         [SerializeField]
         protected int health;
+        [SerializeField]
+        protected int maxHealth;
 
-        public void TakeDamadge(int amount)
+        int Health
         {
-            health -= amount;
+            get => health;
+            set
+            {
+                health = value;
+                if (health > maxHealth) health = maxHealth;
+            }
+        }
+
+        private void Start()
+        {
+            health = maxHealth;
+        }
+        public void TakeDamage(int amount)
+        {
+            Health -= amount;
             if (health <= 0)
             {
                 Die();

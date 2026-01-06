@@ -15,7 +15,7 @@ namespace EarthDefender
     {
         public UnityAction<Vector2> Move = delegate { };
         public UnityAction<bool> Jump = delegate { };
-        public UnityAction<float> Attack = delegate { };
+        public UnityAction<bool> Attack = delegate { };
 
         InputSystem_Actions inputActions;
         public Vector2 Direction => inputActions.Player.Move.ReadValue<Vector2>();
@@ -38,7 +38,16 @@ namespace EarthDefender
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            //noop
+            switch (context.phase)
+            {
+                case InputActionPhase.Started:
+                case InputActionPhase.Performed:
+                    Attack?.Invoke(true);
+                    break;
+                default:
+                    Attack?.Invoke(false);
+                    break;
+            }
         }
 
         public void OnCrouch(InputAction.CallbackContext context)

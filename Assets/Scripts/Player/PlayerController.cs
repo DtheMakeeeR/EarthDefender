@@ -5,6 +5,7 @@ namespace EarthDefender
 {
     public class PlayerController : MonoBehaviour
     {
+        [Header("Movement")]
         [SerializeField]
         float moveSpeed = 5f;
         [SerializeField]
@@ -12,6 +13,10 @@ namespace EarthDefender
 
         [SerializeField]
         InputReader input;
+
+        [Header("Weapon")]
+        [SerializeField]
+        Weapon mainWeapon;
 
         [Header("Camera Bounds")]
         [SerializeField]
@@ -28,37 +33,40 @@ namespace EarthDefender
         Vector2 moveInput;
         Vector3 currentVelocity;
         Vector3 targetPosition;
+        bool isAttacking;
+
+
 
         private void Start()
         {
             input.Move += direction => moveInput = direction.normalized;
+            input.Attack += val => isAttacking = val;
             input.EnablePlayerActions();
         }
         private void Update()
         {
-            Move(moveInput);
+            Move();
+            Shoot();
         }
 
-        private void Move(Vector3 direction)
+        private void Shoot()
         {
-            //if (direction.sqrMagnitude > 0.01f)
+            if (isAttacking)
+            {
+                mainWeapon.Fire();
+            }
+        }
+
+        private void Move()
+        {
             {
                 targetPosition += (new Vector3(moveInput.x, 0, 0) * (moveSpeed * Time.deltaTime));
                 targetPosition.y = transform.position.y;
 
-                //var minPlayerY = CameraFollow.position.y + minY;
-                //var maxPlayerY = CameraFollow.position.y + maxY;
                 ClampTargetPosition();
-                //targetPosition.y = Mathf.Clamp(targetPosition.y, minPlayerY, maxPlayerY);
 
                 transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothness);
-                //transform.position += targetPosition * moveSpeed * Time.deltaTime;
             }
-            //else
-            //{
-            //    ClampTargetPosition();
-            //    transform.position = targetPosition;
-            //}
         }
 
         private void ClampTargetPosition()
