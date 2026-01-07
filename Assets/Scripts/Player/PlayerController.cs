@@ -39,9 +39,14 @@ namespace EarthDefender
 
         private void Start()
         {
+            targetPosition = transform.position;
             input.Move += direction => moveInput = direction.normalized;
             input.Attack += val => isAttacking = val;
             input.EnablePlayerActions();
+            if(mainWeapon.Strategy is SplitShot splitShot)
+            {
+                splitShot.ShotsCount = 1;
+            }
         }
         private void Update()
         {
@@ -75,5 +80,11 @@ namespace EarthDefender
             var maxPlayerX = CameraFollow.position.x + maxX;
             targetPosition.x = Mathf.Clamp(targetPosition.x, minPlayerX, maxPlayerX);
         }
+
+        public void IncreaceSpeed(float amount)
+        {
+            moveSpeed += amount;
+        }
+
     }
 }

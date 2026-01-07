@@ -10,6 +10,8 @@ namespace EarthDefender
     {
         [SerializeField]
         SpawnerStrategy spawnerStrategy;
+        [SerializeField]
+        List<Vector3> spawnPositions;
 
         private void Start() => Timing.RunCoroutine(_SpawnCoroutine().CancelWith(gameObject));
 
@@ -17,8 +19,9 @@ namespace EarthDefender
         {
             while(true)
             {
-                spawnerStrategy.Spawn();
-                yield return Timing.WaitForSeconds(spawnerStrategy.SpawnRate);
+                var pos = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Count)].Add(y: UnityEngine.Random.Range(-0.5f, 0.5f));
+                spawnerStrategy.Spawn(pos);
+                yield return Timing.WaitForSeconds(spawnerStrategy.SpawnRate + UnityEngine.Random.Range(-0.5f, 0.5f));
             }
         }
     }

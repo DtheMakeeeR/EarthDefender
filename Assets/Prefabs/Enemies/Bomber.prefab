@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1553367943550896779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28958805957131562}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28958805957131562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553367943550896779}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0.991218, w: 0.13223816}
+  m_LocalPosition: {x: 0.16600037, y: -0.36499977, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4420905420637120531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -164.802}
 --- !u!1 &1930957241421681674
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +97,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.021543026, y: 0.10232258}
+  m_Offset: {x: -0.017449856, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +107,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2727346, y: 0.79535484}
+  m_Size: {x: 3.4269361, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5079227203081392997
 GameObject:
@@ -159,8 +190,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 50
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4472081488600128898, guid: 1973f1cd9da961f41b64a3af1d8f65c5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 8351446633001484291, guid: 1973f1cd9da961f41b64a3af1d8f65c5, type: 3}
+  m_Color: {r: 0.04392132, g: 0.4433962, b: 0.20751691, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,10 +211,10 @@ GameObject:
   - component: {fileID: 4420905420637120531}
   - component: {fileID: 3236140997592768606}
   - component: {fileID: 8657030487809445}
-  - component: {fileID: 2282461339066165061}
-  - component: {fileID: 1359587867173352320}
+  - component: {fileID: 1990221095776055434}
+  - component: {fileID: 7780994026789167964}
   m_Layer: 7
-  m_Name: LittleGuyLeft
+  m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,12 +230,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.7, y: 8.55, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 976450579608990107}
   - {fileID: 2572209902969894772}
-  - {fileID: 2439756176053546624}
+  - {fileID: 28958805957131562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3236140997592768606
@@ -247,23 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.BasicEnemy
   health: 1
-  maxHealth: 1
-  scoreAmount: 50
---- !u!114 &2282461339066165061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5674422315408554245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127bbcefe6b0add45976a91f0764dea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.TweenTest
-  duration: 3
-  targetPositionX: 15
---- !u!114 &1359587867173352320
+  maxHealth: 5
+  scoreAmount: 250
+--- !u!114 &1990221095776055434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,37 +292,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba88a33a9076ba41b593f1f7d638a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemyWeapon
-  firePoint: {fileID: 2439756176053546624}
-  weaponStrategy: {fileID: 11400000, guid: 39f28be055f99fd4cb72279e5414a855, type: 2}
+  firePoint: {fileID: 28958805957131562}
+  weaponStrategy: {fileID: 11400000, guid: 2a796e05cf5173449bb7d35a2de963ac, type: 2}
   layer: 7
---- !u!1 &7684926403311876794
-GameObject:
+--- !u!114 &7780994026789167964
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2439756176053546624}
-  m_Layer: 7
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2439756176053546624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684926403311876794}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.93578297, w: 0.3525767}
-  m_LocalPosition: {x: -0.03, y: -0.116, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4420905420637120531}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 138.71}
+  m_GameObject: {fileID: 5674422315408554245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b92786c52789d64c88ac9c612f7905d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.StraightLineMovement
+  duration: 5
+  direction: 0

@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a211fb40506ced1418af04e8b17ad091, type: 3}
-  m_Name: LeftLittleBombs
+  m_Name: LittleGuy
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.JustSpawn
-  enemyPrefab: {fileID: 5674422315408554245, guid: 1e01f450ded3d474784f704eba8bac28, type: 3}
-  spawnPosition:
-  - {x: -11, y: 8.5, z: 0}
+  enemyPrefab: {fileID: 5674422315408554245, guid: bb85779c678be974095824f3fabdc47d, type: 3}
   spawnRate: 2

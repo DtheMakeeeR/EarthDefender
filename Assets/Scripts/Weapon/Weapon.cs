@@ -13,6 +13,8 @@ namespace EarthDefender
         [SerializeField, Layer]
         protected int layer;
 
+        public WeaponStrategy Strategy => weaponStrategy;
+
         protected bool isReloaded = true;
         void OnValidate() => layer = gameObject.layer;
 

@@ -15,7 +15,7 @@ namespace EarthDefender
         public int Health
         {
             get => health;
-            private set
+            protected set
             {
                 health = value;
                 if (health > maxHealth) health = maxHealth;

@@ -7,12 +7,10 @@ namespace EarthDefender
         [SerializeField]
         protected GameObject enemyPrefab;
         [SerializeField]
-        protected List<Vector3> spawnPosition;
-        [SerializeField]
         protected float spawnRate;
 
         public float SpawnRate => spawnRate;
 
-        public abstract void Spawn();
+        public abstract void Spawn(Vector3 spawnPosition);
     }
 }

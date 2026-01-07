@@ -39,7 +39,7 @@ namespace EarthDefender
 
         void Update()
         {
-            //transform.SetParent(null);
+            transform.SetParent(null);
             transform.position += transform.up * (speed * Time.deltaTime);
 
             Callback?.Invoke();
