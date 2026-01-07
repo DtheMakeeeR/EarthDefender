@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.BasicEnemy
   health: 2
   maxHealth: 2
+  scoreAmount: 20
 --- !u!50 &5281484039490674644
 Rigidbody2D:
   serializedVersion: 5

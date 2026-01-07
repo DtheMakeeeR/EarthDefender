@@ -247,7 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.BasicEnemy
   health: 1
-  maxHealth: 2
+  maxHealth: 1
+  scoreAmount: 50
 --- !u!114 &2282461339066165061
 MonoBehaviour:
   m_ObjectHideFlags: 0

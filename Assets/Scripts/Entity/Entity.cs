@@ -10,10 +10,12 @@ namespace EarthDefender
         [SerializeField]
         protected int maxHealth;
 
-        int Health
+        public Action OnDeath;
+
+        public int Health
         {
             get => health;
-            set
+            private set
             {
                 health = value;
                 if (health > maxHealth) health = maxHealth;
@@ -32,7 +34,7 @@ namespace EarthDefender
                 Die();
             }
         }
-
+        
         protected abstract void Die();
     }
 }

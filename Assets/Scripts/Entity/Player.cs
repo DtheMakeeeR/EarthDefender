@@ -8,7 +8,7 @@ namespace EarthDefender
         protected override void Die()
         {
             Debug.Log("Player Died");
-            Helpers.QuitGame();
+            OnDeath?.Invoke();
         }
     }
 }
