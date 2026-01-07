@@ -60,7 +60,7 @@ namespace EarthDefender
                 audioSource.Play();
             }
             var entity = collision.gameObject.GetComponent<Entity>();
-            entity.TakeDamage(damage);
+            entity?.TakeDamage(damage);
 
             Destroy(gameObject);
         }

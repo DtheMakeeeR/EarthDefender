@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -931240730793808255, guid: 11f0fcdf58779954190c84a1916b887c, type: 3}
   m_Color: {r: 0.1541919, g: 0.3101187, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7412703079773119843}
   - component: {fileID: 2231412930142328252}
   - component: {fileID: 658498845537174534}
+  - component: {fileID: 7288586717377518178}
   m_Layer: 0
   m_Name: BlueBullet
   m_TagString: Untagged
@@ -119,11 +120,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.03668, y: 1.74702, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5551373763873533896}
-  - {fileID: 3893982719067069952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2231412930142328252
@@ -172,45 +172,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &5976912180095632143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3893982719067069952}
-  - component: {fileID: 2220988072210399788}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3893982719067069952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976912180095632143}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 7412703079773119843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &2220988072210399788
+--- !u!60 &7288586717377518178
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976912180095632143}
+  m_GameObject: {fileID: 2816174219990154092}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -250,9 +218,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5834975}
-      - {x: -0.49730593, y: -0.2734091}
-      - {x: -0.49635834, y: -0.28415668}
-      - {x: 0.015517831, y: -0.29431462}
-      - {x: 0.5074644, y: -0.2869535}
+    - - {x: 0.066768646, y: 0.12717247}
+      - {x: 0.008433282, y: 0.13326338}
+      - {x: -0.07204002, y: 0.1296736}
+      - {x: -0.07519376, y: -0.12801099}
+      - {x: 0.07551479, y: -0.13231713}
   m_UseDelaunayMesh: 1

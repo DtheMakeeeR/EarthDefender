@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 namespace EarthDefender
 {
@@ -7,6 +8,7 @@ namespace EarthDefender
         protected override void Die()
         {
             Debug.Log("Player Died");
+            Helpers.QuitGame();
         }
     }
 }

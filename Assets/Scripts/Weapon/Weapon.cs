@@ -1,33 +1,35 @@
 using UnityEngine;
 using Utilities;
-
+using System.Collections.Generic;
+using MEC;
 namespace EarthDefender
 {
     public class Weapon : MonoBehaviour
     {
         [SerializeField]
-        Transform firePoint;
+        protected Transform firePoint;
         [SerializeField]
-        WeaponStrategy weaponStrategy;
+        protected WeaponStrategy weaponStrategy;
         [SerializeField, Layer]
         protected int layer;
 
-
-        float fireTimer;
+        protected bool isReloaded = true;
         void OnValidate() => layer = gameObject.layer;
 
         void Start() => weaponStrategy.Initialize();
         public void Fire()
         {
-            if (fireTimer >= weaponStrategy.FireRate)
+            if (isReloaded)
             {
                 weaponStrategy.Fire(firePoint, layer);
-                fireTimer = 0f;
+                isReloaded = false;
+                Timing.RunCoroutine(_ReloadCoroutine().CancelWith(gameObject));
             }
         }
-        private void Update()
+        protected virtual IEnumerator<float> _ReloadCoroutine()
         {
-            fireTimer += Time.deltaTime;
+            yield return Timing.WaitForSeconds(weaponStrategy.FireRate);
+            isReloaded = true;
         }
     }
 }
