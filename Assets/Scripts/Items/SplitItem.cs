@@ -4,11 +4,9 @@ namespace EarthDefender
 {
     public class SplitItem : Item
     {
-        void OnTriggerEnter2D(Collider2D other)
+        protected override void ActiveateItem(Player player)
         {
-            Debug.Log($"other: {other.gameObject.name}");
-            other.GetComponent<Player>().IncreaseShotsCount((int)amount);
-            Destroy(gameObject);
+            player.IncreaseShotsCount((int)amount);
         }
     }
 }

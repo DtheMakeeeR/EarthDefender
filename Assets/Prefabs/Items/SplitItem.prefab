@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 53342043271879084}
   - component: {fileID: 7699353769585294274}
   - component: {fileID: 644431428572565363}
+  - component: {fileID: 7682569961296400707}
   m_Layer: 8
   m_Name: SplitItem
   m_TagString: Untagged
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.SplitItem
   amount: 1
+--- !u!114 &7682569961296400707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732173592880077463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c4f5706cc58644d8d5eaefcbc5acce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.FallingItem
+  duration: 1
 --- !u!1 &7538574918955810568
 GameObject:
   m_ObjectHideFlags: 0

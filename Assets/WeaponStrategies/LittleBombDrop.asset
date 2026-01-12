@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LittleBombDrop
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.SingleShot
   projectilePrefab: {fileID: 2816174219990154092, guid: 526bb57423f5d4d459b690136336d8fe, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 8
   projectileLifeTime: 5
   fireRate: 1
   projectileDamadge: 1

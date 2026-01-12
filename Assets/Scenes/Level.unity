@@ -1367,6 +1367,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634044314}
   m_CullTransparentMesh: 1
+--- !u!1 &692540967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692540968}
+  - component: {fileID: 692540969}
+  m_Layer: 0
+  m_Name: RightSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692540968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692540967}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1283832472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692540969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692540967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
+  enemyPrefab: {fileID: 5674422315408554245, guid: bb85779c678be974095824f3fabdc47d, type: 3}
+  spawnPositions:
+  - {x: 11, y: 9, z: 0}
+  - {x: 11, y: 6, z: 0}
+  - {x: 11, y: 8, z: 0}
+  - {x: 11, y: 7, z: 0}
+  - {x: -11, y: 9, z: 0}
+  - {x: -11, y: 6, z: 0}
+  - {x: -11, y: 8, z: 0}
+  - {x: -11, y: 7, z: 0}
+  spawnRate: 3
+  spawnDelay: 0.5
+  randomCoefficient: 0.1
 --- !u!1 &837724857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,9 +2137,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1847828427}
-  - {fileID: 1970919620}
+  - {fileID: 692540968}
   - {fileID: 1796028275}
-  - {fileID: 2141012255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375677163
@@ -2558,12 +2614,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
-  spawnerStrategy: {fileID: 11400000, guid: 15b78c00573c5f448a1e5d425db0c26e, type: 2}
+  enemyPrefab: {fileID: 5674422315408554245, guid: 8366678607d8da34f99e4f33a7b21af4, type: 3}
   spawnPositions:
+  - {x: 11, y: 9, z: 0}
+  - {x: 11, y: 6, z: 0}
+  - {x: 11, y: 8, z: 0}
+  - {x: 11, y: 7, z: 0}
   - {x: -11, y: 9, z: 0}
   - {x: -11, y: 6, z: 0}
   - {x: -11, y: 8, z: 0}
   - {x: -11, y: 7, z: 0}
+  spawnRate: 5
+  spawnDelay: 1
+  randomCoefficient: 0.1
 --- !u!1 &1847828426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,12 +2671,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
-  spawnerStrategy: {fileID: 11400000, guid: 15b78c00573c5f448a1e5d425db0c26e, type: 2}
+  enemyPrefab: {fileID: 5674422315408554245, guid: bb85779c678be974095824f3fabdc47d, type: 3}
   spawnPositions:
   - {x: 11, y: 9, z: 0}
   - {x: 11, y: 6, z: 0}
   - {x: 11, y: 8, z: 0}
   - {x: 11, y: 7, z: 0}
+  - {x: -11, y: 9, z: 0}
+  - {x: -11, y: 6, z: 0}
+  - {x: -11, y: 8, z: 0}
+  - {x: -11, y: 7, z: 0}
+  spawnRate: 3
+  spawnDelay: 0.5
+  randomCoefficient: 0.1
 --- !u!1 &1881316454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,106 +2775,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1970919619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1970919620}
-  - component: {fileID: 1970919621}
-  m_Layer: 0
-  m_Name: RightSpawner (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1970919620
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970919619}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1283832472}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1970919621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970919619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
-  spawnerStrategy: {fileID: 11400000, guid: 0562572945a50b744a3ac6ec7a1b8f2c, type: 2}
-  spawnPositions:
-  - {x: 11, y: 9, z: 0}
-  - {x: 11, y: 6, z: 0}
-  - {x: 11, y: 8, z: 0}
-  - {x: 11, y: 7, z: 0}
---- !u!1 &2141012254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2141012255}
-  - component: {fileID: 2141012256}
-  m_Layer: 0
-  m_Name: :eftSpawner (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2141012255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141012254}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1283832472}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2141012256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141012254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
-  spawnerStrategy: {fileID: 11400000, guid: 0562572945a50b744a3ac6ec7a1b8f2c, type: 2}
-  spawnPositions:
-  - {x: -11, y: 9, z: 0}
-  - {x: -11, y: 6, z: 0}
-  - {x: -11, y: 8, z: 0}
-  - {x: -11, y: 7, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

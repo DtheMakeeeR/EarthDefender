@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6599453727162141936}
   - component: {fileID: 5805368534071521561}
   - component: {fileID: 6456417317435680644}
+  - component: {fileID: -6003420756687017258}
   m_Layer: 8
   m_Name: SpeedItem
   m_TagString: Untagged
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.SpeedItem
   amount: 0.5
+--- !u!114 &-6003420756687017258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531050451166739388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c4f5706cc58644d8d5eaefcbc5acce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.FallingItem
+  duration: 1
 --- !u!1 &4850101073723217583
 GameObject:
   m_ObjectHideFlags: 0

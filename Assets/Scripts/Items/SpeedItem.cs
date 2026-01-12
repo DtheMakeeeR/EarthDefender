@@ -4,10 +4,9 @@ namespace EarthDefender
 {
     public class SpeedItem : Item
     {
-        void OnTriggerEnter2D(Collider2D other)
+        protected override void ActiveateItem(Player player)
         {
-            other.GetComponent<Player>().IncreaseSpeed(amount);
-            Destroy(gameObject);
+            player.IncreaseSpeed(amount);
         }
     }
 }

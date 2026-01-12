@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigBombDrop
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.SingleShot
   projectilePrefab: {fileID: 2816174219990154092, guid: 5848a97f689725b4ea3a1d9e1d1ee8b0, type: 3}
-  projectileSpeed: 4
+  projectileSpeed: 8
   projectileLifeTime: 5
   fireRate: 1
   projectileDamadge: 1
