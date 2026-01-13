@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7d64f546c5aba384588c228cca3de567
+guid: 9554841b19ee2704199d916a1507cfc2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7783813424544337531
-    second: main_0
+      213: -1604708741874733367
+    second: helicopter_0
+  - first:
+      213: 7778900192767916423
+    second: helicopter_1
+  - first:
+      213: -7853831770233140867
+    second: helicopter_2
+  - first:
+      213: -57389571188628275
+    second: helicopter_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_0
+      name: helicopter_0
       rect:
         serializedVersion: 2
-        x: 447
-        y: 179
-        width: 1031
-        height: 808
+        x: 227
+        y: 714
+        width: 779
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5813e184ee65af390800000000000000
-      internalID: -7783813424544337531
+      spriteID: 9cea790c6edeab9e0800000000000000
+      internalID: -1604708741874733367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helicopter_1
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 658
+        width: 507
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789362dc28434fb60800000000000000
+      internalID: 7778900192767916423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helicopter_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 319
+        width: 981
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d798399cd95910390800000000000000
+      internalID: -7853831770233140867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: helicopter_3
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 641
+        width: 607
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc46d733d7c143ff0800000000000000
+      internalID: -57389571188628275
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_0: -7783813424544337531
+      helicopter_0: -1604708741874733367
+      helicopter_1: 7778900192767916423
+      helicopter_2: -7853831770233140867
+      helicopter_3: -57389571188628275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

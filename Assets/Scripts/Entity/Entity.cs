@@ -21,12 +21,12 @@ namespace EarthDefender
                 if (health > maxHealth) health = maxHealth;
             }
         }
-
+        public float HealthNormalized => (health / (float)maxHealth);
         private void Start()
         {
             health = maxHealth;
         }
-        public void TakeDamage(int amount)
+        public virtual void TakeDamage(int amount)
         {
             Health -= amount;
             if (health <= 0)
