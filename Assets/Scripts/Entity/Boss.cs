@@ -7,10 +7,14 @@ namespace EarthDefender
         [SerializeField]
         Image bossHealthBar;
 
+        public bool IsInvinsible = true;
         public override void TakeDamage(int amount)
         {
-            base.TakeDamage(amount);
-            bossHealthBar.fillAmount = HealthNormalized;
+            if(!IsInvinsible)
+            {
+                base.TakeDamage(amount);
+                bossHealthBar.fillAmount = HealthNormalized;
+            }
         }
     }
 }
