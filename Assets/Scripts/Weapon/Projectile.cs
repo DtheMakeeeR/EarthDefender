@@ -16,6 +16,7 @@ namespace EarthDefender
         Transform parent;
 
         public void SetSpeed(float speed) => this.speed = speed;
+        public float GetSpeed() => speed;
         public void SetParent(Transform parent) => this.parent = parent;
         public void SetDamage(int damage) => this.damage = damage;
 
