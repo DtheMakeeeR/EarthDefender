@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 692540968}
   - component: {fileID: 692540969}
   m_Layer: 0
-  m_Name: RightSpawner (1)
+  m_Name: LittleGuy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,17 +1356,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
   enemyPrefab: {fileID: 5674422315408554245, guid: bb85779c678be974095824f3fabdc47d, type: 3}
   spawnPositions:
-  - {x: 11, y: 9, z: 0}
-  - {x: 11, y: 6, z: 0}
-  - {x: 11, y: 8, z: 0}
   - {x: 11, y: 7, z: 0}
-  - {x: -11, y: 9, z: 0}
-  - {x: -11, y: 6, z: 0}
-  - {x: -11, y: 8, z: 0}
+  - {x: 11, y: 8, z: 0}
   - {x: -11, y: 7, z: 0}
+  - {x: -11, y: 8, z: 0}
   spawnRate: 3
-  spawnDelay: 0.5
+  spawnDelay: 2
   randomCoefficient: 0.1
+  maxSpawn: -1
 --- !u!1 &837724857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,7 +1612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aba090dcf7ff4dbabd558ca91add2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.BasicEnemy
-  health: 0
   maxHealth: 0
   scoreAmount: 0
 --- !u!61 &1182279176
@@ -1909,7 +1905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42796253ad9d4fe4c8e8dfd01359fdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.Player
-  health: 0
   maxHealth: 3
   playerWeapon: {fileID: 221133479}
   playerController: {fileID: 1256328090}
@@ -2065,7 +2060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1283832472
 Transform:
   m_ObjectHideFlags: 0
@@ -2081,6 +2076,8 @@ Transform:
   m_Children:
   - {fileID: 1847828427}
   - {fileID: 692540968}
+  - {fileID: 1705029404}
+  - {fileID: 1939020052}
   - {fileID: 1796028275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2133,10 +2130,11 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 1775751219}
   - {fileID: 1274412791}
-  smoothing: 0.05
+  paralaxSmoothing: 0.05
   multiplier: 5
   speed: 2
-  cam: {fileID: 519420032}
+  smoothTime: 1
+  isMoving: 1
 --- !u!1 &1387159603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,6 +2363,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484976162}
   m_CullTransparentMesh: 1
+--- !u!1 &1705029403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705029404}
+  - component: {fileID: 1705029405}
+  m_Layer: 0
+  m_Name: SpeedCargo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705029404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705029403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1283832472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705029405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705029403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
+  enemyPrefab: {fileID: 5674422315408554245, guid: df4869922939666449729612d9c3d60e, type: 3}
+  spawnPositions:
+  - {x: 11, y: 9, z: 0}
+  - {x: 11, y: 6, z: 0}
+  - {x: 11, y: 8, z: 0}
+  - {x: 11, y: 7, z: 0}
+  - {x: -11, y: 9, z: 0}
+  - {x: -11, y: 6, z: 0}
+  - {x: -11, y: 8, z: 0}
+  - {x: -11, y: 7, z: 0}
+  spawnRate: 1
+  spawnDelay: 30
+  randomCoefficient: 0.5
+  maxSpawn: 1
 --- !u!1 &1775751218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2523,7 @@ GameObject:
   - component: {fileID: 1796028275}
   - component: {fileID: 1796028276}
   m_Layer: 0
-  m_Name: :eftSpawner
+  m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2511,8 +2567,9 @@ MonoBehaviour:
   - {x: -11, y: 8, z: 0}
   - {x: -11, y: 7, z: 0}
   spawnRate: 5
-  spawnDelay: 1
+  spawnDelay: 3
   randomCoefficient: 0.1
+  maxSpawn: -1
 --- !u!1 &1847828426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2581,7 @@ GameObject:
   - component: {fileID: 1847828427}
   - component: {fileID: 1847828428}
   m_Layer: 0
-  m_Name: RightSpawner
+  m_Name: LittleGuy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2559,17 +2616,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
   enemyPrefab: {fileID: 5674422315408554245, guid: bb85779c678be974095824f3fabdc47d, type: 3}
   spawnPositions:
-  - {x: 11, y: 9, z: 0}
-  - {x: 11, y: 6, z: 0}
-  - {x: 11, y: 8, z: 0}
-  - {x: 11, y: 7, z: 0}
   - {x: -11, y: 9, z: 0}
   - {x: -11, y: 6, z: 0}
-  - {x: -11, y: 8, z: 0}
-  - {x: -11, y: 7, z: 0}
+  - {x: 11, y: 9, z: 0}
+  - {x: 11, y: 6, z: 0}
   spawnRate: 3
   spawnDelay: 0.5
   randomCoefficient: 0.1
+  maxSpawn: -1
 --- !u!1 &1881316454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,6 +2715,64 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1939020051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1939020052}
+  - component: {fileID: 1939020053}
+  m_Layer: 0
+  m_Name: SplitCargo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1939020052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939020051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1283832472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1939020053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939020051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ae50f0be0225648ae14c6b1d8bc26d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthDefender.EnemySpawner
+  enemyPrefab: {fileID: 5674422315408554245, guid: 9ae50cdf58cecb94a9b91af48a81e9a2, type: 3}
+  spawnPositions:
+  - {x: 11, y: 9, z: 0}
+  - {x: 11, y: 6, z: 0}
+  - {x: 11, y: 8, z: 0}
+  - {x: 11, y: 7, z: 0}
+  - {x: -11, y: 9, z: 0}
+  - {x: -11, y: 6, z: 0}
+  - {x: -11, y: 8, z: 0}
+  - {x: -11, y: 7, z: 0}
+  spawnRate: 1
+  spawnDelay: 10
+  randomCoefficient: 0.5
+  maxSpawn: 1
 --- !u!1001 &6198386472939038200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2672,6 +2784,10 @@ PrefabInstance:
     - target: {fileID: 1984799485050036269, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984799485050036269, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6777877630010201111, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2712,6 +2828,14 @@ PrefabInstance:
     - target: {fileID: 6777877630010201111, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901901351641400362, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
+      propertyPath: maxHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861639010765910440, guid: 01f7cc11f34be1a4c883791d3289b63b, type: 3}
+      propertyPath: maxHealth
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

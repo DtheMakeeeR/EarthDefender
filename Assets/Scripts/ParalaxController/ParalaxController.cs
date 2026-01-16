@@ -1,23 +1,31 @@
 using UnityEngine;
-
+using System.Collections.Generic;
+using MEC;
 namespace EarthDefender
 {
     public class ParalaxController : MonoBehaviour
     {
         [SerializeField] Transform[] backgrounds; // Array of background layers
-        [SerializeField] float smoothing = 10f; // How smooth the parallax effect is
+        [SerializeField] float paralaxSmoothing = 0.05f; // How smooth the parallax effect is
         [SerializeField] float multiplier = 15f; // How much the parallax effect increments per layer
-        [SerializeField] float speed = 4f; 
+        [SerializeField] float speed = 4f;
+        [SerializeField] float smoothTime = 0.5f;
 
         [SerializeField]
-        Transform cam; // Reference to the main camera
-        Vector3 previousCamPos; // Position of the camera in the previous frame
+        bool isMoving;
 
-        void Start() => previousCamPos = cam.position;
-
+        float stoppingVelocity;
         void Update()
         {
-            // Iterate through each background layer
+            if (isMoving)
+            {
+                MakeParalax();
+            }
+
+        }
+
+        private void MakeParalax()
+        {
             for (var i = 0; i < backgrounds.Length; i++)
             {
                 var parallax = -speed * ((i + 1) * multiplier);
@@ -25,10 +33,21 @@ namespace EarthDefender
 
                 var targetPosition = new Vector3(targetX, backgrounds[i].position.y, backgrounds[i].position.z);
 
-                backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, targetPosition, smoothing * Time.deltaTime);
+                backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, targetPosition, paralaxSmoothing * Time.deltaTime);
             }
-
-            previousCamPos = cam.position;
+        }
+        public void StopParalax()
+        {
+            Timing.RunCoroutine(_StoppingCoroutine().CancelWith(gameObject));
+        }
+        IEnumerator<float> _StoppingCoroutine()
+        {
+            while(speed > 0.1f)
+            {
+                speed = Mathf.SmoothDamp(speed, 0f, ref stoppingVelocity, smoothTime);
+                yield return Timing.WaitForOneFrame;
+            }
+            isMoving = false;
         }
     }
 }

@@ -5,7 +5,6 @@ namespace EarthDefender
 {
     public abstract class Entity : MonoBehaviour
     {
-        [SerializeField]
         protected int health;
         [SerializeField]
         protected int maxHealth;
