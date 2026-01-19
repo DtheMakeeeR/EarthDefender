@@ -16,7 +16,7 @@ MonoBehaviour:
   projectileSpeed: 5
   projectileLifeTime: 15.37
   fireRate: 3
-  projectileDamadge: 0
+  projectileDamadge: 1
   trackSpeed: 3
   projectileMaxSpeed: 20
   smooth: 2.5

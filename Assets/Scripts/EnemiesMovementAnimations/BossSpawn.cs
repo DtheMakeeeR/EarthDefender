@@ -31,8 +31,8 @@ namespace EarthDefender
         private void StartMoveAnimation()
         {
             boss.IsInvinsible = false;
-            Tween.LocalPosition(transform, rightPosition, moveDuration, Ease.InOutSine, -1, CycleMode.Yoyo);           
-
+            boss.SetWeaponsActive(true);
+            Tween.LocalPosition(transform, rightPosition, moveDuration, Ease.InOutSine, -1, CycleMode.Yoyo);
         }
     }
 }
